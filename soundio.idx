@@ -1,0 +1,111 @@
+nimTitle	soundio	soundio.html	module src/soundio		0
+nim	enum_SoundIoError_1677722046	soundio.html#enum_SoundIoError_1677722046	enum enum_SoundIoError_1677722046		13
+nim	enum_SoundIoChannelId_1677722048	soundio.html#enum_SoundIoChannelId_1677722048	enum enum_SoundIoChannelId_1677722048		23
+nim	enum_SoundIoChannelLayoutId_1677722050	soundio.html#enum_SoundIoChannelLayoutId_1677722050	enum enum_SoundIoChannelLayoutId_1677722050		60
+nim	enum_SoundIoBackend_1677722052	soundio.html#enum_SoundIoBackend_1677722052	enum enum_SoundIoBackend_1677722052		79
+nim	enum_SoundIoDeviceAim_1677722054	soundio.html#enum_SoundIoDeviceAim_1677722054	enum enum_SoundIoDeviceAim_1677722054		85
+nim	enum_SoundIoFormat_1677722056	soundio.html#enum_SoundIoFormat_1677722056	enum enum_SoundIoFormat_1677722056		88
+nim	struct_SoundIoRingBuffer	soundio.html#struct_SoundIoRingBuffer	object struct_SoundIoRingBuffer		98
+nim	struct_SoundIoDevice	soundio.html#struct_SoundIoDevice	type struct_SoundIoDevice		297
+nim	struct_SoundIo	soundio.html#struct_SoundIo	type struct_SoundIo		304
+nim	enum_SoundIoChannelLayoutId	soundio.html#enum_SoundIoChannelLayoutId	type enum_SoundIoChannelLayoutId		311
+nim	enum_SoundIoFormat	soundio.html#enum_SoundIoFormat	type enum_SoundIoFormat		318
+nim	enum_SoundIoBackend	soundio.html#enum_SoundIoBackend	type enum_SoundIoBackend		325
+nim	struct_SoundIoInStream	soundio.html#struct_SoundIoInStream	type struct_SoundIoInStream		332
+nim	struct_SoundIoSampleRateRange	soundio.html#struct_SoundIoSampleRateRange	type struct_SoundIoSampleRateRange		339
+nim	struct_SoundIoChannelArea	soundio.html#struct_SoundIoChannelArea	type struct_SoundIoChannelArea		346
+nim	struct_SoundIoOutStream	soundio.html#struct_SoundIoOutStream	type struct_SoundIoOutStream		353
+nim	enum_SoundIoDeviceAim	soundio.html#enum_SoundIoDeviceAim	type enum_SoundIoDeviceAim		360
+nim	enum_SoundIoError	soundio.html#enum_SoundIoError	type enum_SoundIoError		367
+nim	struct_SoundIoChannelLayout	soundio.html#struct_SoundIoChannelLayout	type struct_SoundIoChannelLayout		374
+nim	enum_SoundIoChannelId	soundio.html#enum_SoundIoChannelId	type enum_SoundIoChannelId		381
+nim	SoundIoFormatS16NE	soundio.html#SoundIoFormatS16NE	const SoundIoFormatS16NE		393
+nim	SoundIoFormatU16NE	soundio.html#SoundIoFormatU16NE	const SoundIoFormatU16NE		407
+nim	SoundIoFormatS24NE	soundio.html#SoundIoFormatS24NE	const SoundIoFormatS24NE		421
+nim	SoundIoFormatU24NE	soundio.html#SoundIoFormatU24NE	const SoundIoFormatU24NE		435
+nim	SoundIoFormatS32NE	soundio.html#SoundIoFormatS32NE	const SoundIoFormatS32NE		449
+nim	SoundIoFormatU32NE	soundio.html#SoundIoFormatU32NE	const SoundIoFormatU32NE		463
+nim	SoundIoFormatFloat32NE	soundio.html#SoundIoFormatFloat32NE	const SoundIoFormatFloat32NE		477
+nim	SoundIoFormatFloat64NE	soundio.html#SoundIoFormatFloat64NE	const SoundIoFormatFloat64NE		491
+nim	SoundIoFormatS16FE	soundio.html#SoundIoFormatS16FE	const SoundIoFormatS16FE		505
+nim	SoundIoFormatU16FE	soundio.html#SoundIoFormatU16FE	const SoundIoFormatU16FE		519
+nim	SoundIoFormatS24FE	soundio.html#SoundIoFormatS24FE	const SoundIoFormatS24FE		533
+nim	SoundIoFormatU24FE	soundio.html#SoundIoFormatU24FE	const SoundIoFormatU24FE		547
+nim	SoundIoFormatS32FE	soundio.html#SoundIoFormatS32FE	const SoundIoFormatS32FE		561
+nim	SoundIoFormatU32FE	soundio.html#SoundIoFormatU32FE	const SoundIoFormatU32FE		575
+nim	SoundIoFormatFloat32FE	soundio.html#SoundIoFormatFloat32FE	const SoundIoFormatFloat32FE		589
+nim	SoundIoFormatFloat64FE	soundio.html#SoundIoFormatFloat64FE	const SoundIoFormatFloat64FE		603
+nim	SOUNDIO_MAX_CHANNELS	soundio.html#SOUNDIO_MAX_CHANNELS	const SOUNDIO_MAX_CHANNELS		613
+nim	version_string	soundio.html#version_string	proc version_string(): cstring		621
+nim	version_major	soundio.html#version_major	proc version_major(): cint		627
+nim	version_minor	soundio.html#version_minor	proc version_minor(): cint		633
+nim	version_patch	soundio.html#version_patch	proc version_patch(): cint		639
+nim	createSoundIO	soundio.html#createSoundIO	proc createSoundIO(): ptr struct_SoundIo_1677722065		645
+nim	destroySoundIO	soundio.html#destroySoundIO,ptr.struct_SoundIo_1677722064	proc destroySoundIO(soundio: ptr struct_SoundIo_1677722065): void		652
+nim	connect	soundio.html#connect,ptr.struct_SoundIo_1677722064	proc connect(soundio: ptr struct_SoundIo_1677722065): cint		659
+nim	connect_backend	soundio.html#connect_backend,ptr.struct_SoundIo_1677722064,enum_SoundIoBackend_1677722052	proc connect_backend(soundio: ptr struct_SoundIo_1677722065;\n                backend: enum_SoundIoBackend_1677722053): cint		665
+nim	disconnect	soundio.html#disconnect,ptr.struct_SoundIo_1677722064	proc disconnect(soundio: ptr struct_SoundIo_1677722065): void		673
+nim	strerror	soundio.html#strerror,cint	proc strerror(error: cint): cstring		679
+nim	backend_name	soundio.html#backend_name,enum_SoundIoBackend_1677722052	proc backend_name(backend: enum_SoundIoBackend_1677722053): cstring		684
+nim	backend_count	soundio.html#backend_count,ptr.struct_SoundIo_1677722064	proc backend_count(soundio: ptr struct_SoundIo_1677722065): cint		690
+nim	get_backend	soundio.html#get_backend,ptr.struct_SoundIo_1677722064,cint	proc get_backend(soundio: ptr struct_SoundIo_1677722065; index: cint): enum_SoundIoBackend_1677722053		697
+nim	have_backend	soundio.html#have_backend,enum_SoundIoBackend_1677722052	proc have_backend(backend: enum_SoundIoBackend_1677722053): bool		703
+nim	flush_events	soundio.html#flush_events,ptr.struct_SoundIo_1677722064	proc flush_events(soundio: ptr struct_SoundIo_1677722065): void		709
+nim	wait_events	soundio.html#wait_events,ptr.struct_SoundIo_1677722064	proc wait_events(soundio: ptr struct_SoundIo_1677722065): void		715
+nim	wakeup	soundio.html#wakeup,ptr.struct_SoundIo_1677722064	proc wakeup(soundio: ptr struct_SoundIo_1677722065): void		721
+nim	force_device_scan	soundio.html#force_device_scan,ptr.struct_SoundIo_1677722064	proc force_device_scan(soundio: ptr struct_SoundIo_1677722065): void		727
+nim	channel_layout_equal	soundio.html#channel_layout_equal,ptr.struct_SoundIoChannelLayout_1677722058,ptr.struct_SoundIoChannelLayout_1677722058	proc channel_layout_equal(a: ptr struct_SoundIoChannelLayout_1677722059;\n                     b: ptr struct_SoundIoChannelLayout_1677722059): bool		734
+nim	get_channel_name	soundio.html#get_channel_name,enum_SoundIoChannelId_1677722048	proc get_channel_name(id: enum_SoundIoChannelId_1677722049): cstring		742
+nim	parse_channel_id	soundio.html#parse_channel_id,cstring,cint	proc parse_channel_id(str: cstring; str_len: cint): enum_SoundIoChannelId_1677722049		749
+nim	channel_layout_builtin_count	soundio.html#channel_layout_builtin_count	proc channel_layout_builtin_count(): cint		756
+nim	channel_layout_get_builtin	soundio.html#channel_layout_get_builtin,cint	proc channel_layout_get_builtin(index: cint): ptr struct_SoundIoChannelLayout_1677722059		763
+nim	channel_layout_get_default	soundio.html#channel_layout_get_default,cint	proc channel_layout_get_default(channel_count: cint): ptr struct_SoundIoChannelLayout_1677722059		770
+nim	channel_layout_find_channel	soundio.html#channel_layout_find_channel,ptr.struct_SoundIoChannelLayout_1677722058,enum_SoundIoChannelId_1677722048	proc channel_layout_find_channel(layout: ptr struct_SoundIoChannelLayout_1677722059;\n                            channel: enum_SoundIoChannelId_1677722049): cint		777
+nim	channel_layout_detect_builtin	soundio.html#channel_layout_detect_builtin,ptr.struct_SoundIoChannelLayout_1677722058	proc channel_layout_detect_builtin(layout: ptr struct_SoundIoChannelLayout_1677722059): bool		785
+nim	best_matching_channel_layout	soundio.html#best_matching_channel_layout,ptr.struct_SoundIoChannelLayout_1677722058,cint,ptr.struct_SoundIoChannelLayout_1677722058,cint	proc best_matching_channel_layout(preferred_layouts: ptr struct_SoundIoChannelLayout_1677722059;\n                             preferred_layout_count: cint; available_layouts: ptr struct_SoundIoChannelLayout_1677722059;\n                             available_layout_count: cint): ptr struct_SoundIoChannelLayout_1677722059		792
+nim	sort_channel_layouts	soundio.html#sort_channel_layouts,ptr.struct_SoundIoChannelLayout_1677722058,cint	proc sort_channel_layouts(layouts: ptr struct_SoundIoChannelLayout_1677722059;\n                     layout_count: cint): void		802
+nim	get_bytes_per_sample	soundio.html#get_bytes_per_sample,enum_SoundIoFormat_1677722056	proc get_bytes_per_sample(format: enum_SoundIoFormat_1677722057): cint		810
+nim	format_string	soundio.html#format_string,enum_SoundIoFormat_1677722056	proc format_string(format: enum_SoundIoFormat_1677722057): cstring		817
+nim	input_device_count	soundio.html#input_device_count,ptr.struct_SoundIo_1677722064	proc input_device_count(soundio: ptr struct_SoundIo_1677722065): cint		824
+nim	output_device_count	soundio.html#output_device_count,ptr.struct_SoundIo_1677722064	proc output_device_count(soundio: ptr struct_SoundIo_1677722065): cint		831
+nim	get_input_device	soundio.html#get_input_device,ptr.struct_SoundIo_1677722064,cint	proc get_input_device(soundio: ptr struct_SoundIo_1677722065; index: cint): ptr struct_SoundIoDevice_1677722067		838
+nim	get_output_device	soundio.html#get_output_device,ptr.struct_SoundIo_1677722064,cint	proc get_output_device(soundio: ptr struct_SoundIo_1677722065; index: cint): ptr struct_SoundIoDevice_1677722067		845
+nim	default_input_device_index	soundio.html#default_input_device_index,ptr.struct_SoundIo_1677722064	proc default_input_device_index(soundio: ptr struct_SoundIo_1677722065): cint		852
+nim	default_output_device_index	soundio.html#default_output_device_index,ptr.struct_SoundIo_1677722064	proc default_output_device_index(soundio: ptr struct_SoundIo_1677722065): cint		859
+nim	device_ref	soundio.html#device_ref,ptr.struct_SoundIoDevice_1677722066	proc device_ref(device: ptr struct_SoundIoDevice_1677722067): void		866
+nim	device_unref	soundio.html#device_unref,ptr.struct_SoundIoDevice_1677722066	proc device_unref(device: ptr struct_SoundIoDevice_1677722067): void		872
+nim	device_equal	soundio.html#device_equal,ptr.struct_SoundIoDevice_1677722066,ptr.struct_SoundIoDevice_1677722066	proc device_equal(a: ptr struct_SoundIoDevice_1677722067;\n             b: ptr struct_SoundIoDevice_1677722067): bool		878
+nim	device_sort_channel_layouts	soundio.html#device_sort_channel_layouts,ptr.struct_SoundIoDevice_1677722066	proc device_sort_channel_layouts(device: ptr struct_SoundIoDevice_1677722067): void		885
+nim	device_supports_format	soundio.html#device_supports_format,ptr.struct_SoundIoDevice_1677722066,enum_SoundIoFormat_1677722056	proc device_supports_format(device: ptr struct_SoundIoDevice_1677722067;\n                       format: enum_SoundIoFormat_1677722057): bool		892
+nim	device_supports_layout	soundio.html#device_supports_layout,ptr.struct_SoundIoDevice_1677722066,ptr.struct_SoundIoChannelLayout_1677722058	proc device_supports_layout(device: ptr struct_SoundIoDevice_1677722067;\n                       layout: ptr struct_SoundIoChannelLayout_1677722059): bool		900
+nim	device_supports_sample_rate	soundio.html#device_supports_sample_rate,ptr.struct_SoundIoDevice_1677722066,cint	proc device_supports_sample_rate(device: ptr struct_SoundIoDevice_1677722067;\n                            sample_rate: cint): bool		908
+nim	device_nearest_sample_rate	soundio.html#device_nearest_sample_rate,ptr.struct_SoundIoDevice_1677722066,cint	proc device_nearest_sample_rate(device: ptr struct_SoundIoDevice_1677722067;\n                           sample_rate: cint): cint		916
+nim	outstream_create	soundio.html#outstream_create,ptr.struct_SoundIoDevice_1677722066	proc outstream_create(device: ptr struct_SoundIoDevice_1677722067): ptr struct_SoundIoOutStream_1677722069		924
+nim	outstream_destroy	soundio.html#outstream_destroy,ptr.struct_SoundIoOutStream_1677722068	proc outstream_destroy(outstream: ptr struct_SoundIoOutStream_1677722069): void		931
+nim	outstream_open	soundio.html#outstream_open,ptr.struct_SoundIoOutStream_1677722068	proc outstream_open(outstream: ptr struct_SoundIoOutStream_1677722069): cint		938
+nim	outstream_start	soundio.html#outstream_start,ptr.struct_SoundIoOutStream_1677722068	proc outstream_start(outstream: ptr struct_SoundIoOutStream_1677722069): cint		945
+nim	outstream_begin_write	soundio.html#outstream_begin_write,ptr.struct_SoundIoOutStream_1677722068,ptr.ptr.struct_SoundIoChannelArea_1677722062,ptr.cint	proc outstream_begin_write(outstream: ptr struct_SoundIoOutStream_1677722069;\n                      areas: ptr ptr struct_SoundIoChannelArea_1677722063;\n                      frame_count: ptr cint): cint		952
+nim	outstream_end_write	soundio.html#outstream_end_write,ptr.struct_SoundIoOutStream_1677722068	proc outstream_end_write(outstream: ptr struct_SoundIoOutStream_1677722069): cint		961
+nim	outstream_clear_buffer	soundio.html#outstream_clear_buffer,ptr.struct_SoundIoOutStream_1677722068	proc outstream_clear_buffer(outstream: ptr struct_SoundIoOutStream_1677722069): cint		968
+nim	outstream_pause	soundio.html#outstream_pause,ptr.struct_SoundIoOutStream_1677722068,bool	proc outstream_pause(outstream: ptr struct_SoundIoOutStream_1677722069; pause: bool): cint		975
+nim	outstream_get_latency	soundio.html#outstream_get_latency,ptr.struct_SoundIoOutStream_1677722068,ptr.cdouble	proc outstream_get_latency(outstream: ptr struct_SoundIoOutStream_1677722069;\n                      out_latency: ptr cdouble): cint		983
+nim	outstream_set_volume	soundio.html#outstream_set_volume,ptr.struct_SoundIoOutStream_1677722068,cdouble	proc outstream_set_volume(outstream: ptr struct_SoundIoOutStream_1677722069;\n                     volume: cdouble): cint		991
+nim	instream_create	soundio.html#instream_create,ptr.struct_SoundIoDevice_1677722066	proc instream_create(device: ptr struct_SoundIoDevice_1677722067): ptr struct_SoundIoInStream_1677722071		999
+nim	instream_destroy	soundio.html#instream_destroy,ptr.struct_SoundIoInStream_1677722070	proc instream_destroy(instream: ptr struct_SoundIoInStream_1677722071): void		1006
+nim	instream_open	soundio.html#instream_open,ptr.struct_SoundIoInStream_1677722070	proc instream_open(instream: ptr struct_SoundIoInStream_1677722071): cint		1013
+nim	instream_start	soundio.html#instream_start,ptr.struct_SoundIoInStream_1677722070	proc instream_start(instream: ptr struct_SoundIoInStream_1677722071): cint		1020
+nim	instream_begin_read	soundio.html#instream_begin_read,ptr.struct_SoundIoInStream_1677722070,ptr.ptr.struct_SoundIoChannelArea_1677722062,ptr.cint	proc instream_begin_read(instream: ptr struct_SoundIoInStream_1677722071;\n                    areas: ptr ptr struct_SoundIoChannelArea_1677722063;\n                    frame_count: ptr cint): cint		1027
+nim	instream_end_read	soundio.html#instream_end_read,ptr.struct_SoundIoInStream_1677722070	proc instream_end_read(instream: ptr struct_SoundIoInStream_1677722071): cint		1036
+nim	instream_pause	soundio.html#instream_pause,ptr.struct_SoundIoInStream_1677722070,bool	proc instream_pause(instream: ptr struct_SoundIoInStream_1677722071; pause: bool): cint		1043
+nim	instream_get_latency	soundio.html#instream_get_latency,ptr.struct_SoundIoInStream_1677722070,ptr.cdouble	proc instream_get_latency(instream: ptr struct_SoundIoInStream_1677722071;\n                     out_latency: ptr cdouble): cint		1051
+nim	ring_buffer_create	soundio.html#ring_buffer_create,ptr.struct_SoundIo_1677722064,cint	proc ring_buffer_create(soundio: ptr struct_SoundIo_1677722065;\n                   requested_capacity: cint): ptr struct_SoundIoRingBuffer		1059
+nim	ring_buffer_destroy	soundio.html#ring_buffer_destroy,ptr.struct_SoundIoRingBuffer	proc ring_buffer_destroy(ring_buffer: ptr struct_SoundIoRingBuffer): void		1067
+nim	ring_buffer_capacity	soundio.html#ring_buffer_capacity,ptr.struct_SoundIoRingBuffer	proc ring_buffer_capacity(ring_buffer: ptr struct_SoundIoRingBuffer): cint		1074
+nim	ring_buffer_write_ptr	soundio.html#ring_buffer_write_ptr,ptr.struct_SoundIoRingBuffer	proc ring_buffer_write_ptr(ring_buffer: ptr struct_SoundIoRingBuffer): cstring		1081
+nim	ring_buffer_advance_write_ptr	soundio.html#ring_buffer_advance_write_ptr,ptr.struct_SoundIoRingBuffer,cint	proc ring_buffer_advance_write_ptr(ring_buffer: ptr struct_SoundIoRingBuffer;\n                              count: cint): void		1088
+nim	ring_buffer_read_ptr	soundio.html#ring_buffer_read_ptr,ptr.struct_SoundIoRingBuffer	proc ring_buffer_read_ptr(ring_buffer: ptr struct_SoundIoRingBuffer): cstring		1096
+nim	ring_buffer_advance_read_ptr	soundio.html#ring_buffer_advance_read_ptr,ptr.struct_SoundIoRingBuffer,cint	proc ring_buffer_advance_read_ptr(ring_buffer: ptr struct_SoundIoRingBuffer;\n                             count: cint): void		1103
+nim	ring_buffer_fill_count	soundio.html#ring_buffer_fill_count,ptr.struct_SoundIoRingBuffer	proc ring_buffer_fill_count(ring_buffer: ptr struct_SoundIoRingBuffer): cint		1111
+nim	ring_buffer_free_count	soundio.html#ring_buffer_free_count,ptr.struct_SoundIoRingBuffer	proc ring_buffer_free_count(ring_buffer: ptr struct_SoundIoRingBuffer): cint		1118
+nim	ring_buffer_clear	soundio.html#ring_buffer_clear,ptr.struct_SoundIoRingBuffer	proc ring_buffer_clear(ring_buffer: ptr struct_SoundIoRingBuffer): void		1125
+nim	listDevices	soundio.html#listDevices,ptr.struct_SoundIo_1677722064	proc listDevices(sio: ptr struct_SoundIo): cint		94
