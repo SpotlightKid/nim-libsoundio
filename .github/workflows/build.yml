@@ -1,11 +1,15 @@
 name: Run tests and build examples
-on: [push, pull_request]
+on:
+  - push
+  - pull_request
+env:
+  libsoundio-win-repo: "https://github.com/SpotlightKid/libsoundio-windows-bin"
 jobs:
   build:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
 
     runs-on: ${{ matrix.os }}
 
@@ -21,15 +25,17 @@ jobs:
         with:
           brew: libsoundio
           apt: libsoundio-dev
-          choco: libsoundio
-      - name: Update PATH (Windows)
+      - name: Download libsoundio DLL binary (Windows)
         if: runner.os == 'Windows'
-        run: Add-Content $env:GITHUB_PATH "C:\Program Files\libsoundio\bin"
+        run: |
+          git clone -c advice.detachedHead=false  --branch 2.0.1-7 --single-branch --depth 1 "${{env.libsoundio-win-repo}}"
+          Copy-Item -Path "libsoundio-windows-bin\win\x64\libsoundio.dll" -Destination "$(Get-Location)"
+          Add-Content $env:GITHUB_PATH "$(Get-Location)"
       - name: Update LIBRARY_PATH (macOS)
         if: runner.os == 'macOS'
         run: echo "LIBRARY_PATH=$(brew --prefix)/lib" >> "$GITHUB_ENV"
       - name: Run tests
-        run: nimble test -y
+        run: nimble test -y --verbose
       - name: Build examples (debug)
         run: nimble examples_debug
       - name: Build examples (release)
