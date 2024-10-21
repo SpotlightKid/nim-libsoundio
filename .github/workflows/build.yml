@@ -3,8 +3,9 @@ on:
   - push
   - pull_request
 env:
-  nim-version: "2.2.0"
-  libsoundio-win-repo: "https://github.com/SpotlightKid/libsoundio-windows-bin"
+  nim_version: "2.2.0"
+  libsoundio_version: "2.0.1-7"
+  libsoundio_win_repo: "https://github.com/SpotlightKid/libsoundio-windows-bin"
 jobs:
   build:
     strategy:
@@ -22,36 +23,36 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ".nim_runtime"
-          key: ${{ runner.os }}-nim-${{ env.nim-version }}
+          key: ${{ runner.os }}-nim-${{ env.nim_version }}
       - name: Install Nim
         id: install-nim
+        if: ${{ hashFiles('.nim_runtime/bin/nim*') == '' }}
         uses: jiro4989/setup-nim-action@v2
         with:
-          nim-version: ${{ env.nim-version }}
+          nim-version: ${{ env.nim_version }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-        if: ${{ hashFiles('.nim_runtime/bin/nim*') == '' }}
       - name: Set PATH for Unix
+        if: ${{ runner.os != 'Windows' && steps.install-nim.outcome == 'skipped' }}
         shell: bash
         run: |
           echo "$(pwd)/.nim_runtime/bin" >> "$GITHUB_PATH"
           echo "$HOME/.nimble/bin" >> "$GITHUB_PATH"
-        if: ${{ runner.os != 'Windows' && steps.install-nim.outcome == 'skipped' }}
       - name: Set PATH for Windows
+        if: ${{ runner.os == 'Windows' && steps.install-nim.outcome == 'skipped' }}
         shell: pwsh
         run: |
           echo "$(Get-Location)\.nim_runtime\bin" >> $Env:GITHUB_PATH
           mkdir -Force ~\.nimble\bin
           (Resolve-Path ~\.nimble\bin).Path >> $Env:GITHUB_PATH
-        if: ${{ runner.os == 'Windows' && steps.install-nim.outcome == 'skipped' }}
-      - name: Install dependencies
+      - name: Install dependency packages
         uses: ConorMacBride/install-package@v1
         with:
           brew: libsoundio
           apt: libsoundio-dev
-      - name: Download libsoundio DLL binary (Windows)
+      - name: Download & install libsoundio DLL binary (Windows)
         if: runner.os == 'Windows'
         run: |
-          git clone -c advice.detachedHead=false  --branch 2.0.1-7 --single-branch --depth 1 "${{env.libsoundio-win-repo}}"
+          git clone -c advice.detachedHead=false --branch "${{ env.libsoundio_version}}" --single-branch --depth 1 "${{ env.libsoundio_win_repo }}"
           Copy-Item -Path "libsoundio-windows-bin\win\x64\libsoundio.dll" -Destination "$(Get-Location)"
           Add-Content $env:GITHUB_PATH "$(Get-Location)"
       - name: Update LIBRARY_PATH (macOS)
