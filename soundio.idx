@@ -108,4 +108,3 @@ nim	ring_buffer_advance_read_ptr	soundio.html#ring_buffer_advance_read_ptr,ptr.s
 nim	ring_buffer_fill_count	soundio.html#ring_buffer_fill_count,ptr.struct_SoundIoRingBuffer	proc ring_buffer_fill_count(ring_buffer: ptr struct_SoundIoRingBuffer): cint		1111
 nim	ring_buffer_free_count	soundio.html#ring_buffer_free_count,ptr.struct_SoundIoRingBuffer	proc ring_buffer_free_count(ring_buffer: ptr struct_SoundIoRingBuffer): cint		1118
 nim	ring_buffer_clear	soundio.html#ring_buffer_clear,ptr.struct_SoundIoRingBuffer	proc ring_buffer_clear(ring_buffer: ptr struct_SoundIoRingBuffer): void		1125
-nim	listDevices	soundio.html#listDevices,ptr.struct_SoundIo_1677722064	proc listDevices(sio: ptr struct_SoundIo): cint		94
